@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd ">
+	<bean id="dataType" class="type.DataType">
+		<!-- 使用<![CDATA[]]>标记处理xml特殊字符 -->
+		<property name="spchar1">
+			<value><![CDATA[EP&G]]></value>
+		</property>
+		<!-- xml特殊字符转化为实体引用 -->
+		<property name="spchar2">
+			<value>EP&amp;G</value>
+		</property>
+		<!-- 内部bean -->
+		<property name="innerBean">
+			<bean class="type.User">
+				<property name="username" value="riven"></property>
+			</bean>
+		</property>
+		<!-- list -->
+		<property name="list">
+			<list>
+				<value>安徽</value>
+				<value>河南</value>
+				<value>河北</value>
+				<value>湖南</value>
+				<value>湖北</value>
+
+			</list>
+
+		</property>
+		<!-- 数组 -->
+		<property name="arrray">
+			<list>
+				<value>安徽</value>
+				<value>河南</value>
+				<value>河北</value>
+				<value>湖南</value>
+				<value>湖北</value>
+
+			</list>
+		</property>
+		<!-- set -->
+
+		<property name="set">
+			<list>
+				<value>安徽</value>
+				<value>河南</value>
+				<value>河北</value>
+				<value>湖南</value>
+				<value>湖北</value>
+
+			</list>
+		</property>
+		<!-- map -->
+
+		<property name="map">
+			<map>
+				<entry key="ah" value="安徽"></entry>
+				<entry key="hn" value="河南"></entry>
+				<entry key="hb" value="河北"></entry>
+				<entry key="hunan" value="湖南"></entry>
+				<entry key="hubei" value="湖北"></entry>
+
+			</map>
+		</property>
+		<!-- properties类型 -->
+		<property name="props">
+			<props>
+				<prop key="ah">安徽</prop>
+				<prop key="hn">河南</prop>
+				<prop key="hb">河北</prop>
+				<prop key="hunan">湖南</prop>
+				<prop key="hubei">湖北</prop>
+			</props>
+		</property>
+		<!-- 注入空字符串 -->
+		<property name="emptyValue">
+			<value></value>
+		</property>
+		<!-- 注入null -->
+		<property name="nullValue">
+			<null></null>
+		</property>
+	</bean>
+
+</beans>
