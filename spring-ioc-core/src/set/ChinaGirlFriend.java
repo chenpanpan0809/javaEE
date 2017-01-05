@@ -12,6 +12,7 @@ public class ChinaGirlFriend implements GirlFriend {
 	@Override
 	public String speak() {
 		return language;
+		
 	}
 
 }
